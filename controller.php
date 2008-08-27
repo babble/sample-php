@@ -17,3 +17,6 @@ echo "name: <b>" . $val["name"] . "</b><br>";
 echo "count: <b>" . $val["num"] . "</b><br>";
 
 ?>
+
+<br><hr>
+<a href="/require1.php">NEXT</a>
