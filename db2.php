@@ -18,5 +18,4 @@ Array = <?= $v["a"] ?><br>
 
 
 <br><hr>
-done for now
-<!-- <a href="/db2.php">NEXT</a> -->
+<a href="/req1.php?a=123">NEXT</a> 
