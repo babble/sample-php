@@ -1,0 +1,1 @@
+<? header( "Location: /require1.php" ); ?>

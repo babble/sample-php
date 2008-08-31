@@ -2,5 +2,4 @@
 "" = "<?= $_GET["a"] ?>"<br>
 
 <br><hr>
-done for now
-<!-- <a href="/req1.php?a=123">NEXT</a> -->
+<a href="/cookie1.php">NEXT</a>
