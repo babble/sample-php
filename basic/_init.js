@@ -1,7 +1,6 @@
+core.core.routes();
 
-function mapUrlToJxpFile( uri , req ){
-    if ( uri == "/" || uri.match( /^.\w+$/ ) ){
-	req.name = uri.substring(1);
-	return "/controller.php";
-    }
-}
+var routes = Routes.create();
+
+routes.add("/", "controller", {extra: {name: ""}});
+routes.add(/^\/(\w+)$/, "controller", {extra: {name: "$1"}});
