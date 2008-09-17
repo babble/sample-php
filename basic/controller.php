@@ -19,4 +19,4 @@ echo "count: <b>" . $val["num"] . "</b><br>";
 ?>
 
 <br><hr>
-<a href="/require1.php">NEXT</a>
+<a href="require1.php">NEXT</a>
