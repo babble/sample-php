@@ -2,4 +2,4 @@
 "" = "<?= $_GET["a"] ?>"<br>
 
 <br><hr>
-<a href="/cookie1.php">NEXT</a>
+<a href="cookie1.php">NEXT</a>

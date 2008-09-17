@@ -2,7 +2,7 @@
 "" = "<?= $_POST["a" ] ?>"<br>
 
 <br><hr>
-<form action="/req2.php" method="POST">
+<form action="req2.php" method="POST">
   <input type="hidden" name="a" value="123">
   <input type="submit" value="NEXT">
 </form>

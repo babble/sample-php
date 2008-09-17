@@ -1,4 +1,4 @@
 <?
 $_SESSION["s1"] = 717;
-header( "Location: /session2.php" );
+header( "Location: session2.php" );
 ?>

@@ -18,4 +18,4 @@ Array = <?= $v["a"] ?><br>
 
 
 <br><hr>
-<a href="/req1.php?a=123">NEXT</a> 
+<a href="req1.php?a=123">NEXT</a> 

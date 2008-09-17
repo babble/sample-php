@@ -1,1 +1,1 @@
-<? header( "Location: /require1.php" ); ?>
+<? header( "Location: require1.php" ); ?>
