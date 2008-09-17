@@ -1,0 +1,20 @@
+<html>
+  <head>
+	<title>10gen PHP Samples</title>
+  </head>
+  <body>
+	<h2>PHP Samples</h2>
+	<p>
+	  There is currently one PHP sample to check out:
+	  <dl>
+		<dt>
+		  <a href="basic/">basic</a>
+		</dt>
+		<dd>
+		  A basic web app showing the use of PHP on 10gen.
+		</dd>
+	  </dl>
+	  More to come!
+	</p>
+  </body>
+</html>
