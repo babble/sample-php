@@ -2,13 +2,13 @@
 
 echo $_10gen["request"]->getURI() . "<br>";
 
-$val = $db["things"]->findOne( array( "name" => $request["name"] ) );
+$val = $db["things"]->findOne( array( "name" => "basic" ) );
 
 if ( $val ){
   $val["num"] = $val["num"] + 1;
 }
 else {
-  $val = array( "name" => $request["name"] , "num" => 1 );
+  $val = array( "name" => "basic" , "num" => 1 );
 }
     
 $db["things"]->save( $val );
