@@ -1,7 +1,6 @@
 <?
     $t = $db["foo"];
     $t->drop();
-    $t = $db["foo"];
     
     $t->save(array("one" =>"foo", "two"=>"bar"));
     
