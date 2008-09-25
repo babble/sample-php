@@ -1,0 +1,25 @@
+<? require("pieces/header.php") ?>
+
+    <h3>Courses</h3>
+
+    <table class="grid" cellpadding="0" cellspacing="0">
+        <tr>
+            <th colspan="3">Name</th>
+        </tr>
+        
+        <? $cs = $db["courses"]->find()->toArray() ?>
+        
+        <? foreach($cs as $c) { ?>
+            <tr>
+                <td><?= $c["name"] ?></td>
+                <td><a href="course.php?action=edit&id=<?= $c["_id"] ?>">edit</a></td>
+                <td><a href="course.php?action=delete&id=<?= $c["_id"] ?>">delete</a></td>
+            </tr>
+        <? } ?>
+    </table>
+
+    <br />
+
+    <a href="course.php?action=New">New Course</a>
+
+<? require("pieces/footer.php") ?>

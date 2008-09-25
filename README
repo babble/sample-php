@@ -1,9 +1,11 @@
 Several sample sites using PHP on 10gen.
 
-Right now the only site included is the "basic" site. This is meant as a proof
-of concept of a PHP site running on 10gen. It also contains some tests showing
-various functionalities of 10gen's PHP support. Implementations of tutorials for
-PHP are forthcoming.
+The "basic" site is meant as a proof of concept of a PHP site running on 10gen. 
+It also contains some tests showing various functionalities of 10gen's PHP support. 
+Implementations of tutorials for PHP are forthcoming.
+
+Then "student" site is a PHP implemention of the student web app, it is currently 
+incomplete but is being actively worked on.
 
 Tutorial documentation can also be reached from our main developer documentation
 page, here: http://www.10gen.com/wiki/DevDocumentation
