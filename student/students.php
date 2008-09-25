@@ -8,22 +8,22 @@
             <th>Email</th>
             <th>Number of Courses</th>
         </tr>
-	  
+      
         <? $ss = $db["students"]->find()->toArray() ?>
 
         <? foreach($ss as $s) { ?>
             <tr>
-    	        <td><?= $s["name"] ?></td>
+                <td><?= $s["name"] ?></td>
                 <td><?= $s["email"] ?></td>
-	            <td><?= count($s["scores"]) ?></td>
+                <td><?= count($s["scores"]) ?></td>
                 <td><a href="<?= $student_site_root  ?>/student.php?action=edit&s__id=<?= $s["_id"] ?>">edit</a></td>
                 <td><a href="<?= $student_site_root  ?>/student.php?action=delete&s__id=<?= $s["_id"] ?>">delete</a></td>
             </tr>
-        <? } ?>	  
-	</table>
+        <? } ?>      
+    </table>
 
-	<br />
+    <br />
 
-	<a href="student.php?action=new">New Student</a>
+    <a href="student.php?action=new">New Student</a>
 
 <? require("pieces/footer.php") ?>
