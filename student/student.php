@@ -20,7 +20,7 @@
 
     $t = $db["students"];
             
-    $student = $req["id"]? $t->findOne($req["id"]) : newStudent();
+    $student = $req["s__id"]? $t->findOne($req["s__id"]) : newStudent();
     $courses = $db["courses"]->find()->toArray();
 
     $action = strtolower( $req["action"] );
@@ -36,19 +36,19 @@
     else if($action == "save") {
     	$msg = "Saved";
 
-    	$student["name"] = $req["name"];
-    	$student["email"] = $req["email"];
-    	$student["address"]["street"] = $req["address.street"];
-    	$student["address"]["city"] = $req["address.city"];
-    	$student["address"]["state"] = $req["address.state"];
-    	$student["address"]["postalCode"] = $req["address.postalCode"];
+    	$student["name"] = $req["s_name"];
+    	$student["email"] = $req["s_email"];
+    	$student["address"]["street"] = $req["s_address.street"];
+    	$student["address"]["city"] = $req["s_address.city"];
+    	$student["address"]["state"] = $req["s_address.state"];
+    	$student["address"]["postalCode"] = $req["s_address.postalCode"];
     	
     	$t->save($student);
     }
     //Add Score
     else if($action == "add") {
-        $course = $db["courses"]->findOne($req["for_course"]);
-        $grade = $req["grade"];
+        $course = $db["courses"]->findOne($req["course_for"]);
+        $grade = $req["score"];
         
         $student["scores"][] = array("for_course"=>$course, "grade"=>$grade);
         $t->save($student);
@@ -75,25 +75,25 @@
 	            <legend>New User</legend>
 	        <? } ?>
 	      
-	        <input type="hidden" name="id" value="<?= $student["_id"] ?>" />	
+	        <input type="hidden" name="s__id" value="<?= $student["_id"] ?>" />	
 		  	
 	        <label>Name</label>
-	        <input type="text" name="name" value="<?= $student["name"] ?>" />
+	        <input type="text" name="s_name" value="<?= $student["name"] ?>" />
 		
 		    <label>Email</label>
-	        <input type="text" name="email" value="<?= $student["email"] ?>" />
+	        <input type="text" name="s_email" value="<?= $student["email"] ?>" />
 		
 		    <label>Street</label>
-	        <input type="text" name="address.street" value="<?= $student["address"]["street"] ?>" />
+	        <input type="text" name="s_address.street" value="<?= $student["address"]["street"] ?>" />
 		
 		    <label>City</label>
-	        <input type="text" name="address.city" value="<?= $student["address"]["city"] ?>" />
+	        <input type="text" name="s_address.city" value="<?= $student["address"]["city"] ?>" />
 		
 		    <label>State</label>
-		    <input type="text" name="address.state" value="<?= $student["address"]["state"] ?>" />
+		    <input type="text" name="s_address.state" value="<?= $student["address"]["state"] ?>" />
 		
 		    <label>Postal Code</label>
-	        <input type="text" name="address.postalCode" value="<?= $student["address"]["postalCode"] ?>" />
+	        <input type="text" name="s_address.postalCode" value="<?= $student["address"]["postalCode"] ?>" />
 		    
 		    <label></label>
 	        <input type="submit" name="action" value="Save" />
@@ -115,13 +115,13 @@
             <? } ?>
         </table>
         <form method="POST">
-            <input type="hidden" name="id" value="<?= $student["_id"] ?>" /> 
-            <select name="for_course">
+            <input type="hidden" name="s__id" value="<?= $student["_id"] ?>" /> 
+            <select name="course_for">
                 <? foreach($courses as $c) { ?>
                     <option value="<?= $c["_id"] ?>"><?= $c["name"] ?></option> 
                 <? } ?>
             </select>
-            <select name="grade">
+            <select name="score">
                 <? foreach(array("A", "B", "C") as $g) { ?>
                     <option><?= $g ?></option> 
                 <? } ?>

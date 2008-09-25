@@ -11,10 +11,10 @@ function newCourse() {
 	
 	$t = $db["courses"];
 	
-	if($req["id"])
-	   $c = $t->findOne($req["id"]);
+	if($req["c__id"])
+	   $c = $t->findOne($req["c__id"]);
 
-	$action = $req["action"];
+	$action = strtolower( $req["action"] );
 	$isNew = false;
 	
 	//Delete
@@ -23,10 +23,10 @@ function newCourse() {
 		unset($c);
 	}
 	//Save
-	else if($action == "Save") {
+	else if($action == "save") {
 		$msg = "Saved";
 	
-		$c["name"] = $req["name"];
+		$c["name"] = $req["c_name"];
 		 
 		$t->save($c);
 		unset($c);
@@ -57,10 +57,10 @@ function newCourse() {
                 <legend>New Course</legend>
             <? } ?>
 
-            <input type="hidden" name="id" value="<?= $c["_id"] ?>" />
+            <input type="hidden" name="c__id" value="<?= $c["_id"] ?>" />
 
             <label>Name</label>
-            <input type="text" name="name" value="<?= $c["name"] ?>" /><br />
+            <input type="text" name="c_name" value="<?= $c["name"] ?>" /><br />
 
             <label></label>
             <input type="submit" name="action" value="Save" />

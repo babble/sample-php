@@ -16,8 +16,8 @@
     	        <td><?= $s["name"] ?></td>
                 <td><?= $s["email"] ?></td>
 	            <td><?= count($s["scores"]) ?></td>
-	            <td><a href="<?= $site_root ?>/student.php?action=edit&id=<?= $s["_id"] ?>">edit</a></td>
-                <td><a href="<?= $site_root ?>/student.php?action=delete&id=<?= $s["_id"] ?>">delete</a></td>
+	            <td><a href="<?= $site_root ?>/student.php?action=edit&s__id=<?= $s["_id"] ?>">edit</a></td>
+                <td><a href="<?= $site_root ?>/student.php?action=delete&s__id=<?= $s["_id"] ?>">delete</a></td>
             </tr>
         <? } ?>	  
 	</table>

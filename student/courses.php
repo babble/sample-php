@@ -12,8 +12,8 @@
         <? foreach($courses as $c) { ?>
             <tr>
                 <td><?= $c["name"] ?></td>
-                <td><a href="course.php?action=edit&id=<?= $c["_id"] ?>">edit</a></td>
-                <td><a href="course.php?action=delete&id=<?= $c["_id"] ?>">delete</a></td>
+                <td><a href="course.php?action=edit&c__id=<?= $c["_id"] ?>">edit</a></td>
+                <td><a href="course.php?action=delete&c__id=<?= $c["_id"] ?>">delete</a></td>
             </tr>
         <? } ?>
     </table>
