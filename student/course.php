@@ -11,15 +11,16 @@ function newCourse() {
 	
 	$t = $db["courses"];
 	
-	$c = $req["id"]? $t->findOne($req["id"]) : newCourse();
+	if($req["id"])
+	   $c = $t->findOne($req["id"]);
+
 	$action = $req["action"];
 	$isNew = false;
 	
 	//Delete
 	if($action=="delete") {
 		$t->remove($c);
-		header($site_root + "/courses");
-		return;
+		unset($c);
 	}
 	//Save
 	else if($action == "Save") {
@@ -28,7 +29,7 @@ function newCourse() {
 		$c["name"] = $req["name"];
 		 
 		$t->save($c);
-		$c = newCourse();
+		unset($c);
 	}
 	//Edit
 	else if($action == "edit") {
@@ -37,7 +38,11 @@ function newCourse() {
 	//New
 	else /*if($action == "new")*/ {
 		$c = newCourse();
-		$isNew = true;
+	}
+	
+	if(!$c) {
+	   header("Location: courses.php");
+	   return;
 	}
 ?>
 

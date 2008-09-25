@@ -23,7 +23,7 @@
     $student = $req["id"]? $t->findOne($req["id"]) : newStudent();
     $courses = $db["courses"]->find()->toArray();
 
-    $action = $req["action"];
+    $action = strtolower( $req["action"] );
     $isNew = false;
     
     //Delete
@@ -33,7 +33,7 @@
         return;
     }
     //Save
-    else if($action == "Save") {
+    else if($action == "save") {
     	$msg = "Saved";
 
     	$student["name"] = $req["name"];
@@ -43,11 +43,10 @@
     	$student["address"]["state"] = $req["address.state"];
     	$student["address"]["postalCode"] = $req["address.postalCode"];
     	
-    	$t->save($student);    	
-    	$student = newStudent();
+    	$t->save($student);
     }
     //Add Score
-    else if($action == "Add") {
+    else if($action == "add") {
         $course = $db["courses"]->findOne($req["for_course"]);
         $grade = $req["grade"];
         
@@ -110,7 +109,7 @@
         <table class="grid" cellpadding="0" cellspacing="0">
             <? foreach($student["scores"] as $score) { ?>
                 <tr>
-                    <td><?= $score["for_course"]["name"] ?></td>
+                    <td>Course <?= $score["for_course"]["name"] ?></td>
                     <td><?= $score["grade"] ?></td>
                 </tr>
             <? } ?>
