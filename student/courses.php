@@ -7,9 +7,9 @@
             <th colspan="3">Name</th>
         </tr>
         
-        <? $cs = $db["courses"]->find()->toArray() ?>
+        <? $courses = $db["courses"]->find()->toArray() ?>
         
-        <? foreach($cs as $c) { ?>
+        <? foreach($courses as $c) { ?>
             <tr>
                 <td><?= $c["name"] ?></td>
                 <td><a href="course.php?action=edit&id=<?= $c["_id"] ?>">edit</a></td>
