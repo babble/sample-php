@@ -1,0 +1,1 @@
+globalJS = "helloFromJS";
